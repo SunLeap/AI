@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sentiment Analysis | Advanced Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <h1>Sentiment AI Pro</h1>
+                </div>
+                <p class="subtitle">AI-Powered Text Sentiment Analysis Platform</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="analyzer-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-magic"></i> Analyze Text Sentiment</h2>
+                </div>
+
+                <div class="input-section">
+                    <div class="text-input-container" id="textInput">
+                        <textarea 
+                            id="inputText" 
+                            placeholder="Enter your text here to analyze its sentiment... Share your thoughts, reviews, comments, or any text content."
+                            maxlength="10000"
+                        ></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/10000 characters
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="analyzeBtn" disabled>
+                        <i class="fas fa-brain"></i>
+                        <span>Analyze Sentiment</span>
+                    </button>
+                    <button class="btn btn-secondary" id="clearBtn">
+                        <i class="fas fa-trash-alt"></i>
+                        Clear All
+                    </button>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing content sentiment...</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Processing with advanced AI models</p>
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    <div class="error-content">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span id="errorText"></span>
+                    </div>
+                </div>
+
+                <div class="result-section" id="resultSection">
+                    <div class="result-card" id="resultCard">
+                        <div class="sentiment-display">
+                            <div class="sentiment-icon" id="sentimentIcon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="sentiment-info">
+                                <h3 id="sentimentLabel">
+                                    <span class="emoji" id="sentimentEmoji">😊</span>
+                                    Positive
+                                </h3>
+                                <div class="confidence-score">
+                                    Confidence: <span id="confidenceScore">85.6%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill"></div>
+                        </div>
+                        
+                        <!-- Star Rating Section -->
+                        <div class="star-rating-section">
+                            <h4><i class="fas fa-star"></i> Rating</h4>
+                            <div class="stars-display" id="starsDisplay">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="rating-text" id="ratingText">5 out of 5 stars</p>
+                        </div>
+
+                        <!-- Suggestions Section -->
+                        <div class="suggestions-section">
+                            <h4><i class="fas fa-lightbulb"></i> Suggestions</h4>
+                            <div class="suggestions-list" id="suggestionsList">
+                                <!-- Suggestions will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="examples-section">
+                    <h3><i class="fas fa-lightbulb"></i> Try These Examples</h3>
+                    <div class="examples-grid">
+                        <button class="example-btn" onclick="setExample('The pasta was perfectly al dente, the sauce rich and aromatic—easily the best meal I have had this month')">
+                            <span>😊</span> Positive Review
+                        </button>
+                        <button class="example-btn" onclick="setExample('This service was completely disappointing. Poor customer support, delayed delivery, and the product quality was terrible. Never ordering again.')">
+                            <span>😞</span> Negative Feedback
+                        </button>
+                        <button class="example-btn" onclick="setExample('The burger was fine and the fries were okay; nothing memorable, but it got the job done.')">
+                            <span>😐</span> Neutral Opinion
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Sentiment AI Pro. Powered by advanced machine learning models.</p>
+            <div class="footer-links">
+                <a href="/health" target="_blank">System Health</a>
+                <a href="/api/info" target="_blank">API Documentation</a>
+                <a href="#" onclick="showAbout()">About</a>
+                <a href="#" onclick="showHelp()">Help & Support</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
