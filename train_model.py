@@ -13,7 +13,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 # --------- Inputs ---------
 PRIMARY_CSV      = os.path.join(DATA_DIR, "training.csv")                  # text,label,[stars]
-AUG_REVIEWS_CSV  = os.path.join(CSV_DIR,  "tripadvisor_reviews_updated.csv")# optional
+AUG_REVIEWS_CSV  = os.path.join(CSV_DIR,  "tripadvisor_reviews_updated.csv")
 EMOJI_CSV        = os.path.join(CSV_DIR,  "full_emoji.csv")
 SUGGESTIONS_CSV  = os.path.join(CSV_DIR,  "suggestions_dataset.csv")
 
